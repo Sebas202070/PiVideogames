@@ -27,11 +27,13 @@ const getAllVideogames = async () => {
   ).data;
   
   const data = getAllVgApi.results
+
   const results = data.map(e => { return {
        
         name: e.name,
-        image_background: e.background_image,
+        background_image: e.background_image,
         genre: e.genres.map((el) => el.name).toString(),
+        id: e.id,
         created: false,
         
   }
@@ -59,26 +61,44 @@ const searchByVideogame = async (name) => {
 };
 
 const videogameByID = async (id, source) => {
-    const api = [(
+  let response 
+  
+
+  
+  
+if(source === "bdd") {
+  response =  await Videogame.findByPk(id)
+}
+else {
+  const dataApi = await axios.get(
+   
+    `https://api.rawg.io/api/games/${Number(id)}?key=${YOUR_API_KEY}` 
+ )
+response = dataApi.data
+}
+
+   /*  const api = (
         await axios.get(
           `https://api.rawg.io/api/games/${id}?key=${YOUR_API_KEY}`
         )
-      ).data]
+      ).data */
 
-      const apiFilter = api.map(e => { return {
+    /*   const apiFilter = api.map(e => { return {
         name: e.name,
         description: e.description,
         released_date: e.released
-      }})
+      }}) */
   
-  
+ /*  
     const videogame =
  
     source === "api"
       ? apiFilter
       : await Videogame.findByPk(id);
+     
 
-  return videogame;
+  return videogame; */
+  return response;
 };
 
 module.exports = {
