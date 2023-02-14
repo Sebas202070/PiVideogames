@@ -6,8 +6,9 @@ module.exports = (sequelize) => {
   sequelize.define('videogame', {
     id: {
       type: DataTypes.UUID,
+      defaultValue: DataTypes.UUIDV4,
+      allowNull: false,
       primaryKey: true,
-      defaultValue: DataTypes.UUIDV4
 
     },
     name: {
@@ -22,10 +23,15 @@ module.exports = (sequelize) => {
       type: DataTypes.STRING
     },
     rating: {
-      type: DataTypes.STRING,
+      type: DataTypes.DECIMAL,
     },
     platforms: {
-      type: DataTypes.STRING
-    }
+      type: DataTypes.STRING,
+      allowNull: false,
+    },
+   /*  image: {
+      type: DataTypes.STRING,
+      defaultValue: "https://t3.ftcdn.net/jpg/03/34/83/22/360_F_334832255_IMxvzYRygjd20VlSaIAFZrQWjozQH6BQ.jpg"
+    } */
   });
 };

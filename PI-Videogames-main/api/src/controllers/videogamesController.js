@@ -2,8 +2,9 @@ const { Videogame } = require("../db");
 const axios = require("axios");
 const { YOUR_API_KEY } = process.env;
 
-const createVideogame = async (name, description, released_date) => {
-  await Videogame.create({ name, description, released_date });
+const createVideogame = async (name, description, released_date,rating,platforms,image) => {
+return  await Videogame.create({ name, description, released_date, rating,platforms, image });
+
 };
 
 const cleanArray = (arr) => 
@@ -12,7 +13,7 @@ const cleanArray = (arr) =>
         id: e.id,
         name: e.name,
         description: e.description,
-        released_date: e.released_date,
+        release_date: e.release_date,
         rating: e.rating,
         platforms: e.platforms,
       };
@@ -23,7 +24,7 @@ const cleanArray = (arr) =>
 const getAllVideogames = async () => {
   
   const getAllVgApi = (
-    await axios.get(`https://api.rawg.io/api/games?key=${YOUR_API_KEY}&page_size=100`)
+    await axios.get(`https://api.rawg.io/api/games?key=${YOUR_API_KEY}&page_size=15`)
   ).data;
   
   const data = getAllVgApi.results

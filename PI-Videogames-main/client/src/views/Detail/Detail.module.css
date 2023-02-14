@@ -1,10 +1,146 @@
-.container {
+ .container {
   
-    border: 1px solid black;
+   
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    margin: 30px;
     width: fit-content;
-    height: fit-content;
-    
- 
+    height:fit-content;
+    border-radius: 40px;
+    box-shadow: 5px 5px 30px 7px rgba(0, 0, 0, 0.25),
+      -5px -5px 30px 7px rgba(0, 0, 0, 0.22);
+    cursor: pointer;
+    transition: 0.4s;
+    overflow: hidden;
+} 
      
      
- }
+/*  }
+
+ .container {
+	display: flex;
+	padding: 5rem;
+	justify-content: center;
+	align-items: center;
+}
+.detail-container {
+	background: rgba(61,48,48,0.5);
+	-webkit-backdrop-filter: blur(10px);
+	backdrop-filter: blur(10px);
+	border: 1px solid rgba(61,48,48,0.25);
+	border-radius: 12px;
+	width: fit-content;
+	height: fit-content;
+	justify-content: center;
+	align-items: center;
+	padding: 1rem;
+	transition: all .5s ease;
+}
+
+.detail-container:hover{
+	transform: translate3D(0,-1px,0) scale(1.03);
+}
+
+.cont-cont {
+	padding-right: 1rem;
+}
+
+.little-container {
+	display: grid;
+	grid-template-columns: repeat(2, 1fr);
+}
+
+.img {
+	width: 20rem;
+	height: 20rem;
+	padding: 1rem;
+}
+
+.img-container {
+	background: rgba(61,48,48,0.5);
+	-webkit-backdrop-filter: blur(10px);
+	backdrop-filter: blur(10px);
+	border: 1px solid rgba(61,48,48,0.25);
+	border-radius: 12px;
+	width: fit-content;
+	height: fit-content;
+	transition: all .5s ease;
+}
+
+.img-container:hover{
+	transform: translate3D(0,-1px,0) scale(1.03);
+}
+
+.game-title{
+	color: white;
+}
+
+
+.details {
+	color: white;
+} */
+
+
+/* .container {
+	display: flex;
+	padding: 5rem;
+	justify-content: center;
+	align-items: center;
+}
+.detail-container {
+	background: rgba(61,48,48,0.5);
+	-webkit-backdrop-filter: blur(10px);
+	backdrop-filter: blur(10px);
+	border: 1px solid rgba(61,48,48,0.25);
+	border-radius: 12px;
+	width: fit-content;
+	height: fit-content;
+	justify-content: center;
+	align-items: center;
+	padding: 1rem;
+	transition: all .5s ease;
+}
+
+.detail-container:hover{
+	transform: translate3D(0,-1px,0) scale(1.03);
+}
+
+.cont-cont {
+	padding-right: 1rem;
+}
+
+.little-container {
+	display: grid;
+	grid-template-columns: repeat(2, 1fr);
+}
+
+.img {
+	width: 20rem;
+	height: 20rem;
+	padding: 1rem;
+}
+
+.img-container {
+	background: rgba(61,48,48,0.5);
+	-webkit-backdrop-filter: blur(10px);
+	backdrop-filter: blur(10px);
+	border: 1px solid rgba(61,48,48,0.25);
+	border-radius: 12px;
+	width: fit-content;
+	height: fit-content;
+	transition: all .5s ease;
+}
+
+.img-container:hover{
+	transform: translate3D(0,-1px,0) scale(1.03);
+}
+
+.game-title{
+	color: white;
+}
+
+
+.details {
+	color: white;
+} */

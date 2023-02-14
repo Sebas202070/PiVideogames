@@ -1,8 +1,15 @@
 .CardsCointaner {
-   border: 1px solid black;
+/*    border: 1px solid black;
    display: flex;
    flex-direction: row;
    border-radius: 10px;
    flex-wrap: wrap;
-   gap: 1em;
+   gap: 1em; */
+
+   
+display: flex;
+flex-direction: row;
+flex-wrap: wrap;
+align-items: center;
+justify-content: center;
 }

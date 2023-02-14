@@ -1,10 +1,23 @@
 .container {
   
-   border: 1px solid black;
-   width: fit-content;
-   height: fit-content;
-   
+   position: relative;
+  display: flex;
+  flex-direction: column;
+  margin: 30px;
+  width: fit-content;
+  height: fit-content;
+  border-radius: 40px;
+  box-shadow: 5px 5px 30px 7px rgba(0, 0, 0, 0.25),
+    -5px -5px 30px 7px rgba(0, 0, 0, 0.22);
+  cursor: pointer;
+  transition: 0.4s;
+  overflow: hidden;
+}
+  .container  :hover {
+    transform: scale(1.1);
+    box-shadow: 5px 5px 30px 15px rgba(0, 0, 0, 0.25),
+      -5px -5px 30px 15px rgba(0, 0, 0, 0.22);
+  } 
 
     
     
-}

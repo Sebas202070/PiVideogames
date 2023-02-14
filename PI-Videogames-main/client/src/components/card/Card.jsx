@@ -4,14 +4,17 @@ import style from "./Card.module.css"
 
 
 function Card(props) {
-  console.log(props)
+  
   return (
-    <NavLink to={`/detail/${props.id}`} className={style.container}>
-        <img src={props.background_image} alt="Not found" height="220px" width= "220px" />
+    <div className={style.container}>
+    <NavLink to={`/detail/${props.id}`}>
+        <img src={props.background_image} alt="Not found" height="320px" width= "420px"  />
+        </NavLink>
         <p>id: {props.id}</p>
         <p >name:  {props.name} </p>
         <p>genre: {props.genre}</p>
-    </NavLink>
+   
+    </div>
   )
 }
 
