@@ -33,7 +33,7 @@ const Detail = () => {
   useEffect(() => {
 /*     if (id !== undefined && Number(id)) { */
       dispatch(getVideogameDetail (id))
-      dispatch(getGenres())
+   /*    dispatch(getGenres()) */
 
     
   // eslint-disable-next-line react-hooks/exhaustive-deps

@@ -1,10 +1,11 @@
-const { Videogame } = require("../db");
+const { Videogame, Genre } = require("../db");
 const axios = require("axios");
 const { YOUR_API_KEY } = process.env;
-const {Op} = require("sequelize")
+const {Op} = require("sequelize");
 
-const createVideogame = async (name, description, released_date,rating,platforms,image) => {
-return  await Videogame.create({ name, description, released_date, rating,platforms, image });
+
+const createVideogame = async (name, description, released_date,rating,platforms) => {
+return  await Videogame.create({ name, description, released_date, rating,platforms});
 
 };
 
@@ -69,7 +70,17 @@ const videogameByID = async (id, source) => {
   
   
 if(source === "bdd") {
-  response =  await Videogame.findByPk(id)
+  response =  await Videogame.findByPk(id,{
+    include: [
+      {
+        model: Genre,
+        attributes: ["name"],
+        through: {
+          attributes: []
+        }
+      }
+    ]
+  })
 }
 else {
   const dataApi = await axios.get(

@@ -1,4 +1,5 @@
 const { createVideogame, videogameByID, getAllVideogames, searchByVideogame } = require("../controllers/videogamesController")
+const {Genre} = require("../db")
 
 
 
@@ -37,9 +38,13 @@ const getVideogamesHandler = async (req, res) => {
 
     const postVideogamesHandler = async (req, res) => {
         try {
-            const {name, description, released_date, rating,platforms, image} = req.body
-       const newVideogame = await createVideogame(name, description, released_date, rating, platforms, image)
+            const {name, description, released_date, rating,platforms,genres} = req.body
+       const newVideogame = await createVideogame(name, description, released_date, rating, platforms)
        console.log(newVideogame)
+       const genreDb = await Genre.findAll({
+        where: {name: name}
+       })
+       newVideogame.addGenre(genreDb)
        res.status(201).json({newVideogame, status:"success"})
         } catch (error) {
             res.status(400).json({error: error.message})

@@ -55,12 +55,15 @@ export const getVideogameDetail=  (id) => {
 
 
 export const createVideogame = (videogame) => {
-    return function (dispatch)    {
-        return axios
-        .post("http://localhost:3001/videogames",videogame).then((data) => {
-            return dispatch({type: POST_VIDEOGAME, payload: data})
-        })
-    }
+    return async function (dispatch)    {
+		const newVideogame = await axios.post("http://localhost:3001/videogames",videogame).catch(error => alert(error.response.data))
+		if(newVideogame.data) alert("Videogame succesfully created!")
+		return dispatch({
+			type: POST_VIDEOGAME,
+			payload: newVideogame.data
+		})
+       
+      }
 }
 
 

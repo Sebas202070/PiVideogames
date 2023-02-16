@@ -133,7 +133,7 @@ export default function VideogameCreate(){
 					</div>
 					<div className="form-item" id="date">
 							<label>Release Date: </label>
-							<input className="releaseDate" type='date' name='release_date' max='2022-11-30' value={input.release_date} onChange={(event) => handlerInput(event)}></input>
+							<input className="releaseDate" type='date' name='released_date' max='2022-11-30' value={input.release_date} onChange={(event) => handlerInput(event)}></input>
 					</div>
 					<div className="form-item" id="rat">
 						<label>Rating: </label>
@@ -142,7 +142,7 @@ export default function VideogameCreate(){
 					</div>
 					<div className="form-item" id="gen">
 						<label>Genre: </label>
-							<select  name='genre' value={input.genres} onChange={(event) => handleSelectGenres(event)}>
+							<select  name='genres' value={input.genres} onChange={(event) => handleSelectGenres(event)}>
 								<option>Select Genre</option>
 								{
 									genreDb && genreDb.map(g => (<option key={g.id} value={g.name}>{g.name}</option>))
