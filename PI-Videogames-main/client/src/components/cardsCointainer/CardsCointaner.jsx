@@ -18,14 +18,22 @@ const [currentPage, setCurrentPage ] = useState(1);
   const games = videogames.slice(primero, ultimo)
 	
 
-	const setPagination = (page) => {
+/* 	const setPagination = (page) => {
 		return setCurrentPage(page)
 	}
-
+ */
 
   return (
     <div className={style.CardsCointaner}>
-        
+        <div className={style.Pag}>
+{/* <Paginate
+videogamesPerPage={videogamesPerPage}
+allVideogames={videogames.length}
+setPagination={setPagination}
+currentPage={currentPage}
+setCurrentPage= {setCurrentPage}
+/> */}
+</div>
 {games?.length > 0 && games?.map(a => {
   /* {props?.length > 0 && props?.map(a => { */
     return <Card
@@ -41,15 +49,7 @@ const [currentPage, setCurrentPage ] = useState(1);
 
 
 })}
-<div>
-<Paginate
-videogamesPerPage={videogamesPerPage}
-allVideogames={videogames.length}
-setPagination={setPagination}
-currentPage={currentPage}
-setCurrentPage= {setCurrentPage}
-/>
-</div>
+
 
 
 

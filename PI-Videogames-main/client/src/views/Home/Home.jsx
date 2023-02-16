@@ -1,11 +1,12 @@
 import React, { useEffect, useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
-import CardsCointaner from '../../components/cardsCointainer/CardsCointaner'
+
 import { Search } from '../../components/search/Search'
 import { filterByCreation, filterByGenre, orderByName, orderByRating, getGenres, getVideogames, cleanSearch } from '../../redux/actions'
 import { useHistory } from 'react-router-dom'
 import { Paginate } from '../../components/paginate/Paginate'
 import style from "./Home.module.css"
+import Card from '../../components/card/Card'
 
 
 
@@ -22,15 +23,15 @@ const videogames = useSelector(state => state.videogames)
 const [alfabetical, setAlfabetical] = useState('')
 	const [rating, setRating] = useState('')
 
-	/* const [currentPage, setCurrentPage ] = useState(1);
+	 const [currentPage, setCurrentPage ] = useState(1);
 	const videogamesPerPage = 15
 	const ultimo = currentPage * videogamesPerPage
 	const primero = ultimo - videogamesPerPage
-	
+    const games = videogames.slice(primero, ultimo)
 
 	const setPagination = (page) => {
 		return setCurrentPage(page)
-	} */
+	} 
 
 	useEffect(() =>{
 		if(!videogames.length)dispatch(getVideogames())
@@ -38,7 +39,7 @@ const [alfabetical, setAlfabetical] = useState('')
 	 },[dispatch, videogames.length])
 
 
-     /* const games = videogames.slice(primero, ultimo) */
+     /* */
 /*      console.log("games", games) */
 
 
@@ -141,9 +142,26 @@ return (
                             <button className='clear-btn' onClick={() => handleClick()}>Reload Videogames</button> 
                     </div>
                 </div>
-            </div>
-           
-                <CardsCointaner/>
+            </div >
+            <div className={style.con}>
+            {games?.length > 0 && games?.map(a => {
+  /* {props?.length > 0 && props?.map(a => { */
+    return <Card
+    key={crypto.randomUUID()}
+
+    background_image= {a.background_image}
+    id= {a.id}
+    name={a.name}
+    genre={a.genre}
+   
+   />
+   
+    
+
+
+})}
+</div>
+                {/* <CardsCointaner/> */}
                 {/* {games.map(v =>  <CardsCointaner
                     key={v.id}
                     id={v.id}
@@ -153,7 +171,7 @@ return (
                     rating= {v.rating}
                 />)} */}
           
-                {/* <div>
+                <div>
                     <Paginate
                     videogamesPerPage={videogamesPerPage}
                     allVideogames={videogames.length}
@@ -161,7 +179,7 @@ return (
                     currentPage={currentPage}
                     setCurrentPage= {setCurrentPage}
                     />
-                </div> */}
+                </div> 
        
         </div>
 )

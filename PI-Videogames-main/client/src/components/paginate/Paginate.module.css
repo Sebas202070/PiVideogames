@@ -11,7 +11,7 @@
 	margin-bottom: 3rem;
 }
 
-.page-number {
+.page_number {
 	width: 2rem;
 	border-radius: 12px;
 	background: rgba(255,255,255,0.5);
@@ -20,7 +20,7 @@
 	border: 1px solid rgba(255,255,255,0.25);
 }
 
-.page-numberactive {
+.page_numberactive {
 	width: 2.5rem;
 	border-radius: 12px;
 	background: rgba(240, 61, 61, 0.5);
@@ -29,28 +29,28 @@
 	border: 1px solid rgba(255,255,255,0.25);
 }
 
-.page-number:hover {
+.page_number:hover {
 	background-color: white;
 }
 
-.paginate-container {
+.paginate_container {
 	display: flex;
 	justify-content: center;
 }
 
-.prev-next {
+.prev_next {
 	padding-left: 1rem;
 	padding-right: 1rem;
 }
 
-.next-prev-btn {
+.next_prev_btn {
 	background-color: black;
 	width: 5rem;
 	border-radius: 12px;
 	color: white;
 }
 
-.next-prev-btn:hover{
+.next_prev_btn:hover{
 	background-color: white;
 	border-radius: 12px;
 	color: black;

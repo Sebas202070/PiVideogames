@@ -1,5 +1,5 @@
 import React from "react";
-import './Paginate.module.css'
+import style from './Paginate.module.css'
 
 export function Paginate({allVideogames, videogamesPerPage, setPagination, currentPage, setCurrentPage}) {//all videogames = videogames.length => el estado videogames!
 
@@ -20,22 +20,22 @@ export function Paginate({allVideogames, videogamesPerPage, setPagination, curre
 	}
 
 	return(
-		<div className="paginate-container">
-			<div className='prev-next'>
-				<button className="next-prev-btn" onClick={() => handlePrev()} disabled={allVideogames < 15}>prev</button>
+		<div className={style.paginate_container}>
+			<div className={style.prev_next}>
+				<button className={style.next_prev_btn} onClick={() => handlePrev()} disabled={allVideogames < 15}>prev</button>
 			</div>
-				<div className="pages">
+				<div className={style.pages}>
 					{allVideogames < 15 ? 
 					<div key='pagination'> {setPagination(1)}</div> : 
 					pageNumber && pageNumber.map(n =>(
-						<div className='page'>
+						<div className={style.page}>
 							<button className={'page-number' + (n === currentPage ? 'active' : '')}  key={n} onClick={(event) => setPagination(n)} >{n}</button>
 						</div>
 					))
 					}
 				</div>
-				<div className='prev-next'>
-					<button className="next-prev-btn" onClick={() => handleNext()} disabled={allVideogames < 15}>next</button>
+				<div className={style.prev_next}>
+					<button className={style.next_prev_btn} onClick={() => handleNext()} disabled={allVideogames < 15}>next</button>
 				</div>
 		</div>
 	)
