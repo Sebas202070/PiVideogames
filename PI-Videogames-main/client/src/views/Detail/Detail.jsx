@@ -7,6 +7,22 @@ import style from "./Detail.module.css"
 
 
 const Detail = () => {
+  
+/*   let hideText = document.getElementById("displayText")
+  displayText_btn.addEventListener("click", toggleText)
+
+  function toggleText() {
+    hideText.classList.toggle("show")
+    if(hideText.classList.contains("show")) {
+      displayText_btn.innerHTML = "Read less"
+    }
+    else {
+      displayText_btn.innerHTML = "Read more"
+    }
+
+  }
+ */
+
   const { id } = useParams();
   const dispatch = useDispatch();
   
@@ -25,19 +41,21 @@ const Detail = () => {
   
   return (
    
+<div className={style.divimg}>
 <div className={style.container}>
   <h1>{videogame?.name}</h1>
   <div className={style.img}>
   <img src={videogame.background_image} alt="Not found" width="400" height={"400"}/>
   </div>
-  <p>{videogame.description}</p>
+  <details>{videogame.description}</details>
+  
   <h1>Released: {videogame.released}</h1>
   <h2>Rating: {videogame.rating}</h2>
   <h2>Genre: {videogame.genre || (videogame.Genres && videogame.Genres.map(g => g.name + ', '))}</h2>
  {/*  <h1>Platform: {videogame.platforms}</h1> */}
   {/* {videogame?.platforms.map(e => {
     return <h1>{e.platform}</h1>})} */}
-
+</div>
 </div>
     
 )

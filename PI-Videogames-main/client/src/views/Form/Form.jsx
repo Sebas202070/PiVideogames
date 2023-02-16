@@ -3,6 +3,7 @@
 import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from 'react-redux'
 import { createVideogame, getGenres } from "../../redux/actions";
+import style from "./Form.module.css"
 /* import './style/Form.css' */
 
 export const validations = (input) => {
@@ -113,6 +114,7 @@ export default function VideogameCreate(){
 
 
 	return (
+		<div className={style.divimg}>
 		<div className="container-form">
 			<div className="form-container">
 			<form className="form" onSubmit={(event) => handlerSubmit(event)}>
@@ -172,6 +174,7 @@ export default function VideogameCreate(){
 					</div>
 				</form>
 			</div>
+		</div>
 		</div>
 	)
 }

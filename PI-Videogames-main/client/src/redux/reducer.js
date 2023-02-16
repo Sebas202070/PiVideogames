@@ -14,7 +14,7 @@ const rootReducer = (state = initialState, action) => {
       case GET_ALL_VIDEOGAMES:
         return {...state, 
           videogames: action.payload,
-        allVideogames: action.payload}
+        /* allVideogames: action.payload */}
 
         case GET_GENRES:
 			return {

@@ -1,6 +1,7 @@
 const { Videogame } = require("../db");
 const axios = require("axios");
 const { YOUR_API_KEY } = process.env;
+const {Op} = require("sequelize")
 
 const createVideogame = async (name, description, released_date,rating,platforms,image) => {
 return  await Videogame.create({ name, description, released_date, rating,platforms, image });
@@ -24,7 +25,7 @@ const cleanArray = (arr) =>
 const getAllVideogames = async () => {
   
   const getAllVgApi = (
-    await axios.get(`https://api.rawg.io/api/games?key=${YOUR_API_KEY}&page_size=15`)
+    await axios.get(`https://api.rawg.io/api/games?key=${YOUR_API_KEY}&page_size=100`)
   ).data;
   
   const data = getAllVgApi.results
@@ -46,18 +47,18 @@ const getAllVideogames = async () => {
 };
 
 const searchByVideogame = async (name) => {
-    const basadate = await Videogame.findAll({where:{name:name}})
-    const getAllVgApi = (
-        await axios.get(`https://api.rawg.io/api/games?key=${YOUR_API_KEY}`)
-      ).data;
+    const basadate = await Videogame.findAll({where:{name:{[Op.like]:`${name}`}}})
+    const getAllVgApi =  (
+        await axios.get(`https://api.rawg.io/api/games?key=${YOUR_API_KEY}&page_size=15&search=${name}`)
+      ).data; 
       const data = getAllVgApi.results
-      const dataFilter = data.filter((e) => e.name === name
+      
 
 
 
-      )
+      
 
-    return [...basadate, ...dataFilter]
+    return [...basadate, ...data]
 
 };
 

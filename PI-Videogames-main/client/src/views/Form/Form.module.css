@@ -1,11 +1,12 @@
 .divimg {
 	background-image: url(https://d3d0lqu00lnqvz.cloudfront.net/VideoGames/xbox_controller_dreamstime_137654598.jpg);
-	background-repeat: no-repeat;
-    background-size: cover;
+	background-size: cover;
     background-attachment: fixed;
-    height:290em;
-    padding: 20px
-   
+    text-align: center;
+    width: 1350px;
+    height: 800px;
+    padding: 5px ;
+    margin: 0;
    
    
 }

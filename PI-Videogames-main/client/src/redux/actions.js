@@ -65,9 +65,10 @@ export const createVideogame = (videogame) => {
 
 
 export function getVideogamesByName (name) {
-	return async function (dispatch) {
-		const response = await axios.get(`http://localhost:3001/videogames?name=${name}`).catch(error => alert(error.message))
-			return dispatch({type: GET_VIDEOGAMES_BY_NAME, payload: response.data})
+	return async function (dispatch) { 
+		const apiname = await axios.get(`http://localhost:3001/videogames?name=${name}`).catch(error => alert(error.message))
+		const {result} = apiname.data
+			return dispatch({type: GET_VIDEOGAMES_BY_NAME, payload: result})
 	}
 }
 

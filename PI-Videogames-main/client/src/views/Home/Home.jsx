@@ -5,6 +5,7 @@ import { Search } from '../../components/search/Search'
 import { filterByCreation, filterByGenre, orderByName, orderByRating, getGenres, getVideogames, cleanSearch } from '../../redux/actions'
 import { useHistory } from 'react-router-dom'
 import { Paginate } from '../../components/paginate/Paginate'
+import style from "./Home.module.css"
 
 
 
@@ -21,15 +22,15 @@ const videogames = useSelector(state => state.videogames)
 const [alfabetical, setAlfabetical] = useState('')
 	const [rating, setRating] = useState('')
 
-	const [currentPage, setCurrentPage ] = useState(1);
+	/* const [currentPage, setCurrentPage ] = useState(1);
 	const videogamesPerPage = 15
 	const ultimo = currentPage * videogamesPerPage
 	const primero = ultimo - videogamesPerPage
-	const games = videogames.slice(primero, ultimo)
+	
 
 	const setPagination = (page) => {
 		return setCurrentPage(page)
-	}
+	} */
 
 	useEffect(() =>{
 		if(!videogames.length)dispatch(getVideogames())
@@ -37,7 +38,8 @@ const [alfabetical, setAlfabetical] = useState('')
 	 },[dispatch, videogames.length])
 
 
-
+     /* const games = videogames.slice(primero, ultimo) */
+/*      console.log("games", games) */
 
 
 
@@ -96,7 +98,8 @@ const handleClick = () => {
 }
 
 return (
-        <div className="home-container">
+    <div className={style.divimg}>
+       
             <h1>Home</h1>
             <div className="search-bar">
                 <Search/>
@@ -139,17 +142,18 @@ return (
                     </div>
                 </div>
             </div>
-            <div className="card-layout">
-                {games.map(v =>  <CardsCointaner
+           
+                <CardsCointaner/>
+                {/* {games.map(v =>  <CardsCointaner
                     key={v.id}
                     id={v.id}
                     name={v.name}
                     genre={v.genre || (v.Genres && v.Genres.map(g => g.name))}
                     image= {v.image ? v.image : v.image = 'https://www.salonlfc.com/wp-content/uploads/2018/01/image-not-found-scaled-1150x647.png'}
                     rating= {v.rating}
-                />)}
-            </div>
-                <div>
+                />)} */}
+          
+                {/* <div>
                     <Paginate
                     videogamesPerPage={videogamesPerPage}
                     allVideogames={videogames.length}
@@ -157,7 +161,8 @@ return (
                     currentPage={currentPage}
                     setCurrentPage= {setCurrentPage}
                     />
-                </div>
+                </div> */}
+       
         </div>
 )
 }

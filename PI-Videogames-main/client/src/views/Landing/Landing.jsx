@@ -4,15 +4,28 @@ import style from './Landing.module.css'
 
 export default function Landing(){
 	return(
-        <div>
-        <div>
-        <NavLink to="/home"><h1>Welcome to the Videogames App!</h1></NavLink>
-        </div>
-			<div className={style.landing_container}>
+        /* 
+           <>
+          <img src="https://media.wired.com/photos/61770e5c1309ffa6512c62ed/master/pass/Gear-10-Dead-Games-Series-133425591.jpg" alt="Not found" width="1400px" height="700px">
+       
+      <h1 className={style.divc}>Welcome to the Videogames App!</h1>
+        
+        <h1 className={style.divc1}>
+         <NavLink to="/home"> <button className={style.divc1}>Enter!!</button></NavLink>
+         </h1> 
+			{ <div className={style.landing_container}> }
              
-                <img src="https://hips.hearstapps.com/hmg-prod/images/most-popular-video-games-of-2022-1642612227.png" alt="Not found" />
-			</div>
-            </div>
+                
+			{ </div> }
+       </img>
+      </>   */
+      <div className={style.divimg}>
+  <h1 className={style.divc}>Welcome to the Videogames App!</h1>
+  <h1>
+         <NavLink to="/home"> <button className={style.divc1}>Enter!!</button></NavLink>
+         </h1> 
+      </div>
 	)
+  
 }
 

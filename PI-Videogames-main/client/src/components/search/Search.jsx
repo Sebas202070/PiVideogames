@@ -4,6 +4,7 @@ import { useState } from "react";
 import { useDispatch } from "react-redux";
 import { getVideogamesByName, cleanSearch } from "../../redux/actions";
 
+
 /* export default function Search({handleName}) {
   const [searchText, setSearchText] = useState('')
   
@@ -38,15 +39,20 @@ export function Search (){
 	}
 	const handlerSubmit = (event) => {
 		event.preventDefault();
-		if(!name.length) alert('Insert a name!')
+		if(!name.length) alert('Insert a name!');
+		else if (!/^[a-zA-Z0-9 ]{0,25}$/.test(name)){
+			alert('Name invalid')
+		}
 		else {
-			dispatch(cleanSearch())
+			/* dispatch(cleanSearch())  */
 			dispatch(getVideogamesByName(name));
 			setName('')
+			 
+		
 		}
 	}
 	return(
-			<form  className="search-container" onSubmit={(event) => handlerSubmit(event)}>
+			<form  className="search-container" onSubmit={handlerSubmit}>
 				<input className="search-input" type="text" placeholder=" Insert name..." value={name} onChange={handlerChange}/>
 				<div className='search-btn'>
 					<button onChange={(event)=> handlerSubmit(event)} className="s-btn" type="submit">Search</button>

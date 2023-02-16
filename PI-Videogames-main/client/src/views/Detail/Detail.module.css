@@ -4,7 +4,9 @@
     position: relative;
     display: flex;
     flex-direction: column;
-    margin: 30px;
+	margin: auto;
+    margin-left: 450px;
+	margin-top: 10px;
     width: fit-content;
     height:fit-content;
     border-radius: 40px;
@@ -16,131 +18,40 @@
 } 
      
      
-/*  }
 
- .container {
-	display: flex;
-	padding: 5rem;
-	justify-content: center;
-	align-items: center;
+
+.divimg {
+	background-image: url(https://d3d0lqu00lnqvz.cloudfront.net/VideoGames/xbox_controller_dreamstime_137654598.jpg);
+	background-size: cover;
+    background-attachment: fixed;
+    text-align: center;
+    width: 1350px;
+    height: 900px;
+    padding: 5px ;
+    margin: 0;
+   
+   
+   
 }
-.detail-container {
-	background: rgba(61,48,48,0.5);
-	-webkit-backdrop-filter: blur(10px);
-	backdrop-filter: blur(10px);
-	border: 1px solid rgba(61,48,48,0.25);
-	border-radius: 12px;
+
+.read {
+	background-color: turquoise;
+	border: none;
+	border-radius: 40px;
+	height:fit-content ;
 	width: fit-content;
-	height: fit-content;
-	justify-content: center;
-	align-items: center;
-	padding: 1rem;
-	transition: all .5s ease;
-}
-
-.detail-container:hover{
-	transform: translate3D(0,-1px,0) scale(1.03);
-}
-
-.cont-cont {
-	padding-right: 1rem;
-}
-
-.little-container {
-	display: grid;
-	grid-template-columns: repeat(2, 1fr);
-}
-
-.img {
-	width: 20rem;
-	height: 20rem;
-	padding: 1rem;
-}
-
-.img-container {
-	background: rgba(61,48,48,0.5);
-	-webkit-backdrop-filter: blur(10px);
-	backdrop-filter: blur(10px);
-	border: 1px solid rgba(61,48,48,0.25);
-	border-radius: 12px;
-	width: fit-content;
-	height: fit-content;
-	transition: all .5s ease;
-}
-
-.img-container:hover{
-	transform: translate3D(0,-1px,0) scale(1.03);
-}
-
-.game-title{
+	margin-left: 550px;
 	color: white;
+	padding: 15px 32px;
+	font-size: 1.2em;
+	box-shadow: 0px 0px 10px 0px lightblue;
+	cursor: pointer;
 }
 
-
-.details {
-	color: white;
-} */
-
-
-/* .container {
-	display: flex;
-	padding: 5rem;
-	justify-content: center;
-	align-items: center;
-}
-.detail-container {
-	background: rgba(61,48,48,0.5);
-	-webkit-backdrop-filter: blur(10px);
-	backdrop-filter: blur(10px);
-	border: 1px solid rgba(61,48,48,0.25);
-	border-radius: 12px;
-	width: fit-content;
-	height: fit-content;
-	justify-content: center;
-	align-items: center;
-	padding: 1rem;
-	transition: all .5s ease;
+.display {
+	display: none;
 }
 
-.detail-container:hover{
-	transform: translate3D(0,-1px,0) scale(1.03);
+.show{
+	display: block;
 }
-
-.cont-cont {
-	padding-right: 1rem;
-}
-
-.little-container {
-	display: grid;
-	grid-template-columns: repeat(2, 1fr);
-}
-
-.img {
-	width: 20rem;
-	height: 20rem;
-	padding: 1rem;
-}
-
-.img-container {
-	background: rgba(61,48,48,0.5);
-	-webkit-backdrop-filter: blur(10px);
-	backdrop-filter: blur(10px);
-	border: 1px solid rgba(61,48,48,0.25);
-	border-radius: 12px;
-	width: fit-content;
-	height: fit-content;
-	transition: all .5s ease;
-}
-
-.img-container:hover{
-	transform: translate3D(0,-1px,0) scale(1.03);
-}
-
-.game-title{
-	color: white;
-}
-
-
-.details {
-	color: white;
-} */
